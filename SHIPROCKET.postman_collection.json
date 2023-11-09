@@ -1,0 +1,261 @@
+{
+	"info": {
+		"_postman_id": "96f6acc6-fb31-48ef-8e5e-b9239dbb035e",
+		"name": "SHIPROCKET",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "29208521"
+	},
+	"item": [
+		{
+			"name": "CREATE-API-USER-AND CHANNEL",
+			"item": [
+				{
+					"name": "create-api-user",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "email",
+									"value": "shashank@accelerlab.in",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "shashank@18",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "https://apiv2.shiprocket.in/v1/external/auth/login",
+							"protocol": "https",
+							"host": [
+								"apiv2",
+								"shiprocket",
+								"in"
+							],
+							"path": [
+								"v1",
+								"external",
+								"auth",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "channel-id",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "APIs",
+			"item": [
+				{
+					"name": "SEND-ORDER-DETAILS",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwczovL2FwaXYyLnNoaXByb2NrZXQuaW4vdjEvZXh0ZXJuYWwvYXV0aC9sb2dpbiIsImlhdCI6MTY5OTQzMzg2OSwiZXhwIjoxNzAwMjk3ODY5LCJuYmYiOjE2OTk0MzM4NjksImp0aSI6ImlJOHlXcWlCc3VIWkNKVksiLCJzdWIiOjQwNjczNjUsInBydiI6IjA1YmI2NjBmNjdjYWM3NDVmN2IzZGExZWVmMTk3MTk1YTIxMWU2ZDkifQ.Pjvmw3KckVb420nX9burpDmOfiXvwtBpE7lFXc7QZC8",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": []
+						},
+						"url": {
+							"raw": "http://localhost:6969/orderDetails",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "6969",
+							"path": [
+								"orderDetails"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "CHECK-SERVICES",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwczovL2FwaXYyLnNoaXByb2NrZXQuaW4vdjEvZXh0ZXJuYWwvYXV0aC9sb2dpbiIsImlhdCI6MTY5Nzc5Nzg0MywiZXhwIjoxNjk4NjYxODQzLCJuYmYiOjE2OTc3OTc4NDMsImp0aSI6IkIyeG5qMGF4bk5ZRmgzV3IiLCJzdWIiOjQwNjczNjUsInBydiI6IjA1YmI2NjBmNjdjYWM3NDVmN2IzZGExZWVmMTk3MTk1YTIxMWU2ZDkifQ.gSJd8DsU-LIH8mTe-W-pFn_Qiac5U1fEbnfUbmyYW1U",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:6969/serviceAvailability",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "6969",
+							"path": [
+								"serviceAvailability"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GENERATE-AWB",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwczovL2FwaXYyLnNoaXByb2NrZXQuaW4vdjEvZXh0ZXJuYWwvYXV0aC9sb2dpbiIsImlhdCI6MTY5Nzc5NTIxNCwiZXhwIjoxNjk4NjU5MjE0LCJuYmYiOjE2OTc3OTUyMTQsImp0aSI6ImxxbzhKRmhHUTkza1JUUmIiLCJzdWIiOjQwNjczNjUsInBydiI6IjA1YmI2NjBmNjdjYWM3NDVmN2IzZGExZWVmMTk3MTk1YTIxMWU2ZDkifQ.-JgqpQOqu6fjg30jt0yOyjoQIgpp3IIdJwikZQ3oeDo",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"order_id\":\"424089994\",\r\n            \"pickup_postcode\":\"110030\",\r\n            \"delivery_postcode\":\"122002\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:6969/generateAWB",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "6969",
+							"path": [
+								"generateAWB"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "REQUEST-SHIPMENT",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwczovL2FwaXYyLnNoaXByb2NrZXQuaW4vdjEvZXh0ZXJuYWwvYXV0aC9sb2dpbiIsImlhdCI6MTY5Nzg1ODU2MywiZXhwIjoxNjk4NzIyNTYzLCJuYmYiOjE2OTc4NTg1NjMsImp0aSI6IlpoUUZaY2VyRzF5MEcyZmsiLCJzdWIiOjQwNjczNjUsInBydiI6IjA1YmI2NjBmNjdjYWM3NDVmN2IzZGExZWVmMTk3MTk1YTIxMWU2ZDkifQ.Ckx2OLIKET9yyPWLm93JQMq5ukH4LL83Dt7QN7IE29I",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:6969/requestShipment",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "6969",
+							"path": [
+								"requestShipment"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GENERATE-INVOICE",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwczovL2FwaXYyLnNoaXByb2NrZXQuaW4vdjEvZXh0ZXJuYWwvYXV0aC9sb2dpbiIsImlhdCI6MTY5Nzg1ODU2MywiZXhwIjoxNjk4NzIyNTYzLCJuYmYiOjE2OTc4NTg1NjMsImp0aSI6IlpoUUZaY2VyRzF5MEcyZmsiLCJzdWIiOjQwNjczNjUsInBydiI6IjA1YmI2NjBmNjdjYWM3NDVmN2IzZGExZWVmMTk3MTk1YTIxMWU2ZDkifQ.Ckx2OLIKET9yyPWLm93JQMq5ukH4LL83Dt7QN7IE29I",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:6969/generateInvoice",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "6969",
+							"path": [
+								"generateInvoice"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GENERATE-LABEL",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwczovL2FwaXYyLnNoaXByb2NrZXQuaW4vdjEvZXh0ZXJuYWwvYXV0aC9sb2dpbiIsImlhdCI6MTY5Nzg1ODU2MywiZXhwIjoxNjk4NzIyNTYzLCJuYmYiOjE2OTc4NTg1NjMsImp0aSI6IlpoUUZaY2VyRzF5MEcyZmsiLCJzdWIiOjQwNjczNjUsInBydiI6IjA1YmI2NjBmNjdjYWM3NDVmN2IzZGExZWVmMTk3MTk1YTIxMWU2ZDkifQ.Ckx2OLIKET9yyPWLm93JQMq5ukH4LL83Dt7QN7IE29I",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:6969/generateLabel",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "6969",
+							"path": [
+								"generateLabel"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "TRACK-SHIPMENT",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:6969/trackShippment/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "6969",
+							"path": [
+								"trackShippment",
+								""
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
